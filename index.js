@@ -3,11 +3,11 @@
 
 const {Fighter} = require('./src/Fighter.js');
 
-const heracles = new Fighter("💪🧔 Heracles", 20, 6);
-const lion = new Fighter("🦁 Nemean Lion", 11, 13);
+const heracles = new Fighter("🧔", "Heracles", 20, 6);
+const lion = new Fighter("🦁", "Nemean Lion", 11, 13);
 
-console.log(`${heracles.name}\t💛 ${heracles.life}`);
-console.log(`${lion.name}\t💛 ${lion.life}`);
+console.log(`${heracles.avatar}${heracles.name}\t${lion.heart} ${heracles.life}`);
+console.log(`${lion.avatar}${lion.name}\t${lion.heart} ${lion.life}`);
 console.log('\n⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️\n');
 let round = 1;
 const intervalID = setInterval(() => {
@@ -15,8 +15,8 @@ const intervalID = setInterval(() => {
     heracles.fight(lion);
     if (!lion.isAlive()) {
         console.log('\n⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️\n');
-        console.log(`💀 ${lion.name} is dead`);
-        console.log(`🏆 ${heracles.name} wins! (💛${heracles.life})`);
+        console.log(`💀 ${lion.avatar}${lion.name} is dead`);
+        console.log(`🏆 ${heracles.avatar}${heracles.name} wins! (${heracles.heart}${heracles.life})`);
         if (lion.life < 0) {
             console.log('💀💀💀 FATALITY 💀💀💀');
         }
@@ -25,8 +25,8 @@ const intervalID = setInterval(() => {
         lion.fight(heracles);
         if (!heracles.isAlive()) {
             console.log('\n⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️➖⚔️\n');
-            console.log(`💀 ${heracles.name} is dead`)
-            console.log(`🏆 ${lion.name} wins! (💛${lion.life})`)
+            console.log(`💀 ${heracles.avatar}${heracles.name} is dead`)
+            console.log(`🏆 ${lion.avatar}${lion.name} wins! (${lion.heart}${lion.life})`)
             if (heracles.life < 0) {
                 console.log('💀💀💀 FATALITY 💀💀💀')
             }
@@ -38,7 +38,7 @@ const intervalID = setInterval(() => {
     round++;
 
 
-}, 800);
+}, 600);
 
 // In the index.js file, create a loop for performing a fight to the death! As long as one of the two enemies has a health > 0, the combat therefore continues.
 
